@@ -90,6 +90,12 @@ Se utiliza H2 en memoria. Hibernate crea las tablas automáticamente, pero para 
 
 src/main/resources/create_db.sql
 
+## Bases de datos
+
+El diagrama de la solución se encuentra en:
+
+src/main/resources/Diagram-user.png
+
 ## Autor
 
 - Diego Espinola.
