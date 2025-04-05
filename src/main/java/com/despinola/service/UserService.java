@@ -1,8 +1,8 @@
 package com.despinola.service;
 
-import com.despinola.entities.UserEntity;
 import com.despinola.model.User;
+import com.despinola.model.UserResponse;
 
 public interface UserService {
-    User createUser(User user);
+    UserResponse createUser(User user);
 }

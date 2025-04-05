@@ -4,6 +4,7 @@ import com.despinola.entities.UserEntity;
 import com.despinola.entities.UserPhonesEntity;
 import com.despinola.model.User;
 import com.despinola.model.UserPhone;
+import com.despinola.model.UserResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -22,5 +23,7 @@ public interface UserMapper {
 
     List<UserPhone> toPhoneModels(List<UserPhonesEntity> entities);
     List<UserPhonesEntity> toPhoneEntities(List<UserPhone> models);
+
+    UserResponse toUserResponse(UserEntity user);
 
 }

@@ -1,6 +1,7 @@
 package com.despinola.controller;
 
 import com.despinola.model.User;
+import com.despinola.model.UserResponse;
 import com.despinola.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,22 +26,20 @@ public class UsuarioControllerTest {
 
     @Test
     void testCreateUser_ReturnsSavedUser() {
-        // Arrange
+
         User inputUser = new User();
         inputUser.setName("Juan");
         inputUser.setEmail("juan@example.com");
 
-        User savedUser = new User();
+        UserResponse savedUser = new UserResponse();
         savedUser.setUid(UUID.randomUUID());
         savedUser.setName("Juan");
         savedUser.setEmail("juan@example.com");
 
         when(userService.createUser(inputUser)).thenReturn(savedUser);
 
-        // Act
-        ResponseEntity<User> response = userController.createUser(inputUser);
+        ResponseEntity<UserResponse> response = userController.createUser(inputUser);
 
-        // Assert
         assertThat(response.getStatusCodeValue()).isEqualTo(200);
         assertThat(response.getBody()).isEqualTo(savedUser);
 

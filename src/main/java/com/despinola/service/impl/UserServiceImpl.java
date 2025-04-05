@@ -3,11 +3,11 @@ package com.despinola.service.impl;
 import com.despinola.entities.UserEntity;
 import com.despinola.mapper.UserMapper;
 import com.despinola.model.User;
+import com.despinola.model.UserResponse;
 import com.despinola.repository.UserRepository;
 import com.despinola.security.JwtUtil;
 import com.despinola.service.UserService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     private final JwtUtil jwtUtil;
 
     @Override
-    public User createUser(User user) {
+    public UserResponse createUser(User user) {
 
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new IllegalArgumentException("El correo ya está registrado.");
@@ -34,6 +34,6 @@ public class UserServiceImpl implements UserService {
         }
 
         UserEntity savedUser = userRepository.save(userEntity);
-        return userMapper.toModel(savedUser);
+        return userMapper.toUserResponse(savedUser);
     }
 }
