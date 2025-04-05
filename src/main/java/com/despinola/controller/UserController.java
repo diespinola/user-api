@@ -28,7 +28,7 @@ public class UserController {
     @Operation(summary = "Create User", description = "Register new user")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Usuario creado exitosamente",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponse.class))),
             @ApiResponse(responseCode = "400", description = "Error de validación",
                     content = @Content(mediaType = "application/json")),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor",
