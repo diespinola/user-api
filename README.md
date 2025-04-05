@@ -50,13 +50,13 @@ Puedes definir la variable de entorno PASSWORD_REGEX de dos maneras:
 **Opción A: Desde la terminal**
 
 En Linux/macOS:  
-`export PASSWORD_REGEX='^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$'`
+`export PASSWORD_REGEX='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'`
 
 En Windows (CMD):  
-`set PASSWORD_REGEX=^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$`
+`set PASSWORD_REGEX=^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
 
 En Windows (PowerShell):  
-`$env:PASSWORD_REGEX = '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$'`
+`$env:PASSWORD_REGEX = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'`
 
 **Opción B: Desde IntelliJ IDEA (Run/Debug Configurations)**
 Abre el menú Run > Edit Configurations....
@@ -64,7 +64,7 @@ Abre el menú Run > Edit Configurations....
 Selecciona tu configuración de ejecución del proyecto.
 
 En el campo Environment variables, agrega:  
-`PASSWORD_REGEX=^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$`
+`PASSWORD_REGEX=^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
 
 Guarda los cambios y ejecuta tu aplicación.
 

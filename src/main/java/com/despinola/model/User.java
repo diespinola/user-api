@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
-//import validation.ValidPassword;
+import validation.ValidPassword;
 
 import java.util.Date;
 import java.util.List;
@@ -32,7 +32,7 @@ public class User {
     @Schema(description = "Correo electrónico del usuario", example = "juan@rodriguez.org", required = true)
     private String email;
     @NotBlank(message = "La contraseña no puede estar vacía")
-//    @ValidPassword
+    @ValidPassword
     @Schema(description = "Contraseña del usuario", example = "Abc12345$", required = true)
     private String password;
     @JsonIgnore
